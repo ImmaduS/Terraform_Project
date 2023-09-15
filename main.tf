@@ -1,3 +1,5 @@
+# Script
+
 terraform {
   required_providers {
     aws = {
