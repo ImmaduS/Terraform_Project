@@ -1,25 +1,50 @@
-module "vpc" {
-  source = "./modules/vpc"
-  # Define module variables here
+# Script
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.16"
+    }
+  }
+
+  required_version = ">= 1.2.0"
 }
 
-module "route53" {
-  source = "./modules/route53"
-  # Define module variables here
+provider "aws" {
+  region  = "us-east-2"
 }
 
+resource "aws_instance" "app_server" {
+ 
+}
 module "autoscaling" {
-  source = "./modules/autoscaling"
-  # Define module variables here
+  source = "/home/ec2-user/environment/project/terrafrom/modules/autoscaling"
+
+  servers = 1
 }
+
 
 module "rds" {
-  source = "./modules/rds"
-  # Define module variables here
+  source = "/home/ec2-user/environment/project/terrafrom/modules/rds"
+  servers = 1
 }
 
+
+module "route53" {
+  source = "/home/ec2-user/environment/project/terrafrom/modules/route53"
+  servers = 1
+  }
+
+  
 module "s3" {
-  source = "./modules/s3"
-  # Define module variables here
+  source = "/home/ec2-user/environment/project/terrafrom/modules/s3"
+  servers = 1
 }
 
+
+module "vpc" {
+  source = "/home/ec2-user/environment/project/terrafrom/modules/vpc"
+  servers = 1
+  
+}

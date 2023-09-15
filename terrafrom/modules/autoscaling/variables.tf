@@ -5,4 +5,3 @@ variable "autoscaling_variable" {
   type        = string
   default     = "default_value"
 }
-
