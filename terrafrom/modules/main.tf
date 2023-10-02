@@ -1,4 +1,5 @@
-# Script
+
+# This is the main terraform config file
 
 terraform {
   required_providers {

@@ -1,4 +1,4 @@
-#outputs.tf
+#To display the outputs
 
 output "vpc_id" {
     decription  = "The VPC Identifier"
