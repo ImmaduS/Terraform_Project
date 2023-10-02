@@ -1,4 +1,4 @@
-#To display the outputs
+#To display the outputs for the variable in question
 
 output "vpc_id" {
     decription  = "The VPC Identifier"
