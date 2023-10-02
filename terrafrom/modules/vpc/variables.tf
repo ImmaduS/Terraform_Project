@@ -17,6 +17,7 @@ variable "security_groups" {
 }
 
 variable "availaibility_zones" {
-	description = "AZ"
+	description = "az"
 	sensitive = false
+	default =["us-east-1a", "us-east-1b"]
 }

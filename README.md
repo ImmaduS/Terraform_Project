@@ -1,2 +1,2 @@
 # DevOps
-use terraform and bash fore the infrastructure provisioning 
+use terraform ensure infrastructure provisioning on AWS
