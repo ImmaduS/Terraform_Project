@@ -20,32 +20,37 @@ resource "aws_instance" "app_server" {
  
 }
 module "autoscaling" {
-  source = "/home/ec2-user/environment/project/terrafrom/modules/autoscaling"
+  source = "../modules/autoscaling"
 
   servers = 1
 }
 
 
 module "rds" {
-  source = "/home/ec2-user/environment/project/terrafrom/modules/rds"
+  source = "../modules/rds"
   servers = 1
+  db_password = ""
+  instance_class = ""
 }
 
 
 module "route53" {
-  source = "/home/ec2-user/environment/project/terrafrom/modules/route53"
+  source = "../modules/route53"
   servers = 1
   }
 
   
 module "s3" {
-  source = "/home/ec2-user/environment/project/terrafrom/modules/s3"
+  source = "../modules/s3"
   servers = 1
 }
 
 
 module "vpc" {
-  source = "/home/ec2-user/environment/project/terrafrom/modules/vpc"
+  source = "../modules/vpc"
   servers = 1
-  
+
+  security_groups = ""
+  subnet_cidr     = ""
+  vpc_cidr        = ""
 }
