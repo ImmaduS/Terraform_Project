@@ -5,13 +5,13 @@ variable "subnet_cidr"{
 
 }
 variable "vpc_cidr" {
-	descripton = "The CIDR Blocks"
+	description = "The CIDR Blocks"
 	sensitive = false
 	
 }
 
 variable "security_groups" {
-	descrition = "The security groups"
+	description = "The security groups"
 	sensitive = true
 	
 }
