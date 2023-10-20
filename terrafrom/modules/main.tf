@@ -29,6 +29,8 @@ module "autoscaling" {
 module "rds" {
   source = "../modules/rds"
   servers = 1
+  db_password = ""
+  instance_class = ""
 }
 
 
@@ -47,5 +49,8 @@ module "s3" {
 module "vpc" {
   source = "../modules/vpc"
   servers = 1
-  
+
+  security_groups = ""
+  subnet_cidr     = ""
+  vpc_cidr        = ""
 }
