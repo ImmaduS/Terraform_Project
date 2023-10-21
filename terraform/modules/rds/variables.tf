@@ -29,7 +29,7 @@ variable "db_engine_version"{
 }
 variable "skip_final_snapshot"{
 	description = " snapshot"
-	type = boolean
+	type = bool
 	sensitive = false
 }
 

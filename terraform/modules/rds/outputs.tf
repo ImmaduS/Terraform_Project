@@ -1,4 +1,3 @@
-
 output "rds_hostname" {
 	description = "RDS instance hostname"
 	value = aws_db-instance.project.adress
@@ -11,9 +10,8 @@ output "rds_port" {
 	sensitive = true
 }
 
-output "rds_username " {
+output "rds_username" {
 	description = "RDS instance root username"
 	value = aws_db_instance.project.username
 	sensitive = true
 }
-
