@@ -6,7 +6,3 @@ resource "aws_autoscaling_group" "main" {
   desired_capacity     = var.desired_capacity
   vpc_zone_identifier  = aws_subnet.public.*.id
 }
-
-# Create a launch configuration and associate it with the ASG.
-# Configure a load balancer for distributing traffic.
-
