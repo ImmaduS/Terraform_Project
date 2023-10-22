@@ -3,6 +3,6 @@
 output "vpc_id" {
 
     description  = "The VPC Identifier"
-    value       = aws_vpc.exemple.id
+    value       = aws_vpc.vpc.id
 
 }
