@@ -10,6 +10,8 @@ terraform {
   required_version = ">= 1.2.0"
 }
 
+
+
 provider "aws" {
   region  = "us-east-2"
 }
@@ -52,6 +54,7 @@ module "vpc" {
   subnet_cidr     = ["10.0.1.0/24"]  
   vpc_cidr        = "10.0.0.0/16"
 }
+
 
 
 module "loadbalancer" {
