@@ -11,7 +11,6 @@ terraform {
 }
 
 
-
 provider "aws" {
   region  = "us-east-2"
 }
@@ -50,7 +49,7 @@ module "s3" {
 
 module "vpc" {
   source          = "./modules/vpc"
-  security_groups = ["sg-xxxxxx"]  
+  security_groups = [""]  
   subnet_cidr     = ["10.0.1.0/24"]  
   vpc_cidr        = "10.0.0.0/16"
 }
