@@ -14,22 +14,26 @@ provider "aws" {
   region  = "us-east-2"
 }
 
-resource "aws_instance" "app_server" {
- 
-}
 module "autoscaling" {
   source = "./modules/autoscaling"
 }
 
 
 module "rds" {
-  source = "./modules/rds"
-  db_username = Postgres
-  db_password = "Administrator"
-  instance_class = "db.t3.micro"
-  az = "us-east-2a"
+  source              = "./modules/rds"
+  db_username         = "Postgres"
+  db_password         = "Administrator"
+  db_instance_class   = "db.t3.micro"
+  az                  = "us-east-2a"
+  db_engine_version   = "your_db_engine_version"  
 
+  skip_final_snapshot = true  
+  db_name             = "mydatabase"  
+  db_allocated_storage = 20  
+  parameter_group_name = "your_parameter_group"
 }
+
+
 
 
 module "route53" {
@@ -43,11 +47,12 @@ module "s3" {
 
 
 module "vpc" {
-  source = "./modules/vpc"
-  security_groups = ""
-  subnet_cidr     = ""
+  source          = "./modules/vpc"
+  security_groups = ["sg-xxxxxx"]  
+  subnet_cidr     = ["10.0.1.0/24"]  
   vpc_cidr        = "10.0.0.0/16"
 }
+
 
 module "loadbalancer" {
   source = "./modules/loadbalancer"
